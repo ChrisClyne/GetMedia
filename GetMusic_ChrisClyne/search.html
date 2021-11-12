@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetMusic - Search</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.js"></script>
+    <script src="scripts/search.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<header>
+    <img src="images/Logo4.svg" class="logo" alt="get media logo">
+    <a button class="button2" href="index.html">Home</a>
+    <a button class="button2" href="voucher.html">Vouchers</a>
+    <a button class="button2" href="contact.html">Contact</a>
+</header>
+<!-- ng-contoller directive calls contoller named iTunesContoller -->
+
+
+<body ng-controller="iTunesController">
+    <div id="searchbox">
+        <div id="container">
+            <!-- error handler -->
+            {{error}}
+            <!-- ng-submit directive calls function and passess in artist -->
+            <form name="search" ng-submit="searchiTunes(artist)" class="searchForm">
+                <!-- ng-model takes value from form as a parameter named artist -->
+                <input type="search" required placeholder="Artist" ng-model="artist" id="artist">
+                <input type="submit" value="Search" id="search">
+            </form>
+
+            <div class="songResultsContainer">
+                <div class="songResult" ng-repeat="song in songs">
+                    <a href="{{song.previewUrl}}">
+                        <img ng-src="{{ song.artworkUrl60 }}" alt="{{collectionName}}">
+                    </a>
+                    <span>{{ song.trackName }}</span>
+                    <a href="{{song.previewUrl}}">Play</a>
+                    <span>£{{ song.collectionPrice }}</span>
+                </div>
+            </div>
+
+
+            <!-- <table>
+                <thead>
+                    <tr>
+                        <th>Album</th>
+                        <th>Track</th>
+                        <th>Preview</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="song in songs">
+                        <td>
+                            <a href="{{song.previewUrl}}">
+                                <img ng-src="{{ song.artworkUrl60 }}" alt="{{collectionName}}">
+                            </a>
+                        </td>
+                        <td>
+                            {{ song.trackName }}
+                        </td>
+                        <td>
+                            <a href="{{song.previewUrl}}">Play</a>
+                        </td>
+                        <td>
+                            {{ song.collectionPrice }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table> -->
+        </div>
+    </div>
+    <footer>
+        <image src="images/apple-logo.svg" class="appleLogo" alt="apple logo" alt="apple logo"></image>
+    </footer>
+
+</body>
+
+</html>

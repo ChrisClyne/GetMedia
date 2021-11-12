@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Music - Vouchers</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<header>
+    <img src="images/Logo4.svg" class="logo" alt="get media logo">
+    <a button class="button2" href="index.html">Home</a>
+    <a button class="button2" href="search.html">Search</a>
+    <a button class="button2" href="contact.html">Contact</a>
+</header>
+
+<body>
+    <form id="booking" method="POST">
+        <h3>Select A Voucher.</h3>
+        <button class="button3" id="button5" value="5">£5</button>
+        <button class="button3" id="button10" value="10">£10</button>
+        <button class="button3" id="button15" value="15">£15</button><br><br>
+        <p id="voucherdetails"></p>
+        <label for="name" class="formlabel">Name</label>
+        <input type="text" id="customername" placeholder="Name" required><br><br>
+
+        <label for="email" class="formlabel">Email Address</label>
+        <input type="text" id="email" placeholder="Email address" required><br><br>
+
+        <label for="amount" class="formlabel">Number of Vouchers</label>
+        <input type="text" id="amount" placeholder="Number of vouchers" required><br><br>
+
+        <label for="payment" class="formlabel">Payment Method</label>
+        <select id="payment" name="area">
+            <option>Select form of payment....</option>
+            <option value="GooglePay">GooglePay</option>
+            <option value="ApplePay">ApplePay</option>
+            <option value="Debit Card">Visa Debit</option>
+            <option value="Credit Card">Credit Card</option>
+        </select><br><br>
+
+    </form>
+    <button id="BuyNow">Buy Now</button><br><br><br>
+
+    <p id="details"></p>
+    <footer>
+        <img src="images/apple-logo.svg" class="appleLogo" alt="apple logo">
+    </footer>
+    <script src="scripts/voucher.js"></script>
+
+</body>
+
+</html>
